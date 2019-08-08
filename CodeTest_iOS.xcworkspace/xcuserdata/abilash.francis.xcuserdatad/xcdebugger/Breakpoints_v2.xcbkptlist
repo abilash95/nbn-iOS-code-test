@@ -2,4 +2,84 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CodeTest_iOSTests/CodeTest_iOSTests.m"
+            timestampString = "586959731.918367"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-testShowSelectedLocation"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[CodeTest_iOSTests testShowSelectedLocation]_block_invoke"
+                  moduleName = "CodeTest_iOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abilash.francis/Desktop/iOS_test/CodeTest_iOS/CodeTest_iOSTests/CodeTest_iOSTests.m"
+                  timestampString = "586959684.735749"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "238">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[CodeTest_iOSTests testShowSelectedLocation]_block_invoke"
+                  moduleName = "CodeTest_iOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abilash.francis/Desktop/iOS_test/CodeTest_iOS/CodeTest_iOSTests/CodeTest_iOSTests.m"
+                  timestampString = "586959684.737898"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "776">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[CodeTest_iOSTests testShowSelectedLocation]_block_invoke"
+                  moduleName = "CodeTest_iOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abilash.francis/Desktop/iOS_test/CodeTest_iOS/CodeTest_iOSTests/CodeTest_iOSTests.m"
+                  timestampString = "586959684.740149"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "874">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[CodeTest_iOSTests testShowSelectedLocation]_block_invoke"
+                  moduleName = "CodeTest_iOSTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abilash.francis/Desktop/iOS_test/CodeTest_iOS/CodeTest_iOSTests/CodeTest_iOSTests.m"
+                  timestampString = "586959684.742685"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "983">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

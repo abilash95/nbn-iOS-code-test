@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EQMapViewController : UIViewController
+@interface EQMapViewController : UIViewController 
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic)  NSDictionary *selectedFeature;
+
+- (void)showLocationOnMap;
 
 @end
 

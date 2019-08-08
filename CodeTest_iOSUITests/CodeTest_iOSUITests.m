@@ -51,5 +51,14 @@
     XCTAssertNotNil([[[self.app.otherElements containingType:XCUIElementTypeAlert identifier:@"Error"] childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:0] );
 }
 
-@end
+- (void)testEQTableRowSelectionShowsMap {
+    XCUIElementQuery *tablesQuery = self.app.tables;
+    XCUIElementQuery *cellQuery = [tablesQuery.cells containingType:XCUIElementTypeStaticText
+                                                         identifier:@"earthquake"];
+    XCUIElementQuery* cell = [cellQuery childrenMatchingType:XCUIElementTypeStaticText];
+    XCUIElement* cellElement = cell.element;
+    [cellElement.firstMatch tap];
+    XCTAssertNotNil([self.app.maps element]);
+}
 
+@end

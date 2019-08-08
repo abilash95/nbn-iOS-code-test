@@ -10,10 +10,11 @@
 #import "AFHTTPSessionManager.h"
 #import "EQTableViewCell.h"
 #import "GeoJSON.h"
+#import "EQMapViewController.h"
 
 #define EQ_URL @"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
 
-#define EQMagnitude @"Magnitude"
+#define EQMapViewSegueIdentifier @"EQMapViewControllerSegue"
 #define EQDateFormat @"dd/MM/yyy hh:mm a"
 #define EQPROPERTIES @"properties"
 #define EQPLACE @"place"
@@ -100,16 +101,19 @@
 }
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:EQMapViewSegueIdentifier])
+    {
+        EQMapViewController *mapViewController = (EQMapViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *) sender];
+        mapViewController.selectedFeature = self.eqFeaturesList[indexPath.row];
+    }
 }
-*/
 
+#pragma mark - Utility
 /**
  Converts the timestamp from API response to respective human readable date time string
  @param timeStamp A long integer received in the API response.
@@ -120,7 +124,7 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     if (self.dateformatter == nil) {
         self.dateformatter = [[NSDateFormatter alloc]init];
-        [self.dateformatter setDateFormat:@"dd/MM/yyy hh:mm a"];
+        [self.dateformatter setDateFormat:EQDateFormat];
     }
     NSString *dateString=[self.dateformatter stringFromDate:date];
     return dateString;

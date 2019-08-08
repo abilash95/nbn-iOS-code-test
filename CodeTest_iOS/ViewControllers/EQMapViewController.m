@@ -8,6 +8,11 @@
 
 #import "EQMapViewController.h"
 
+#define EQPROPERTIES @"properties"
+#define EQPLACE @"place"
+#define EQGEOMETRY @"geometry"
+#define EQCOORDINATE @"coordinates"
+
 @interface EQMapViewController ()
 
 @end
@@ -16,17 +21,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self showLocationOnMap];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**
+ Shows the selected location on the map.
+ **/
+- (void)showLocationOnMap {
+    NSString* place = [[self.selectedFeature valueForKey:EQPROPERTIES] valueForKey:EQPLACE];
+    NSArray* coordiante = [[self.selectedFeature valueForKey:EQGEOMETRY] valueForKey:EQCOORDINATE];
+    
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 1;
+    span.longitudeDelta = 1;
+    CLLocationCoordinate2D location;
+    location.latitude = [[coordiante objectAtIndex:1] doubleValue];
+    location.longitude= [[coordiante objectAtIndex:0] doubleValue];
+    region.span = span;
+    region.center = location;
+    [self.mapView setRegion:region animated:YES];
+    self.mapView.showsUserLocation = YES;
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = location;
+    point.title = place;
+    
+    [self.mapView addAnnotation:point];
 }
-*/
 
 @end
