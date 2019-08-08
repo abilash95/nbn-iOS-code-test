@@ -16,6 +16,8 @@
 		8DD83A5522FBDB6300EEFDB3 /* CodeTest_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A5422FBDB6300EEFDB3 /* CodeTest_iOSUITests.m */; };
 		8DD83A6722FBE2A900EEFDB3 /* EQListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A6622FBE2A900EEFDB3 /* EQListViewController.m */; };
 		8DD83A6A22FBE3A500EEFDB3 /* EQMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A6922FBE3A500EEFDB3 /* EQMapViewController.m */; };
+		8DD83A6E22FBE9E800EEFDB3 /* EQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A6D22FBE9E800EEFDB3 /* EQTableViewCell.m */; };
+		8DD83A6F22FBF71C00EEFDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD83A3622FBDB6100EEFDB3 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		8DD83A6622FBE2A900EEFDB3 /* EQListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EQListViewController.m; sourceTree = "<group>"; };
 		8DD83A6822FBE3A500EEFDB3 /* EQMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EQMapViewController.h; sourceTree = "<group>"; };
 		8DD83A6922FBE3A500EEFDB3 /* EQMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EQMapViewController.m; sourceTree = "<group>"; };
+		8DD83A6C22FBE9E800EEFDB3 /* EQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EQTableViewCell.h; sourceTree = "<group>"; };
+		8DD83A6D22FBE9E800EEFDB3 /* EQTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EQTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			children = (
 				8DD83A6222FBE10300EEFDB3 /* AppDelegate */,
 				8DD83A6322FBE12000EEFDB3 /* ViewControllers */,
+				8DD83A6B22FBE9B000EEFDB3 /* CustomCells */,
 				8DD83A6422FBE16700EEFDB3 /* Storyboards */,
 				8DD83A3922FBDB6300EEFDB3 /* Assets.xcassets */,
 				8DD83A3E22FBDB6300EEFDB3 /* Info.plist */,
@@ -159,6 +164,15 @@
 				8DD83A3B22FBDB6300EEFDB3 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8DD83A6B22FBE9B000EEFDB3 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				8DD83A6C22FBE9E800EEFDB3 /* EQTableViewCell.h */,
+				8DD83A6D22FBE9E800EEFDB3 /* EQTableViewCell.m */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD83A6F22FBF71C00EEFDB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD83A6E22FBE9E800EEFDB3 /* EQTableViewCell.m in Sources */,
 				8DD83A4022FBDB6300EEFDB3 /* main.m in Sources */,
 				8DD83A6722FBE2A900EEFDB3 /* EQListViewController.m in Sources */,
 				8DD83A3222FBDB6100EEFDB3 /* AppDelegate.m in Sources */,
