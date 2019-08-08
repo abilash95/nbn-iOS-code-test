@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  EQListViewController.h
 //  CodeTest_iOS
 //
 //  Created by Abilash Francis on 08/08/2019.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface EQListViewController : UITableViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8DD83A3222FBDB6100EEFDB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A3122FBDB6100EEFDB3 /* AppDelegate.m */; };
-		8DD83A3522FBDB6100EEFDB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A3422FBDB6100EEFDB3 /* ViewController.m */; };
 		8DD83A3822FBDB6100EEFDB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD83A3622FBDB6100EEFDB3 /* Main.storyboard */; };
 		8DD83A3A22FBDB6300EEFDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD83A3922FBDB6300EEFDB3 /* Assets.xcassets */; };
 		8DD83A3D22FBDB6300EEFDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD83A3B22FBDB6300EEFDB3 /* LaunchScreen.storyboard */; };
 		8DD83A4022FBDB6300EEFDB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A3F22FBDB6300EEFDB3 /* main.m */; };
 		8DD83A4A22FBDB6300EEFDB3 /* CodeTest_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A4922FBDB6300EEFDB3 /* CodeTest_iOSTests.m */; };
 		8DD83A5522FBDB6300EEFDB3 /* CodeTest_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A5422FBDB6300EEFDB3 /* CodeTest_iOSUITests.m */; };
+		8DD83A6722FBE2A900EEFDB3 /* EQListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A6622FBE2A900EEFDB3 /* EQListViewController.m */; };
+		8DD83A6A22FBE3A500EEFDB3 /* EQMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD83A6922FBE3A500EEFDB3 /* EQMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,6 @@
 		8DD83A2D22FBDB6100EEFDB3 /* CodeTest_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeTest_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD83A3022FBDB6100EEFDB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8DD83A3122FBDB6100EEFDB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8DD83A3322FBDB6100EEFDB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DD83A3422FBDB6100EEFDB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DD83A3722FBDB6100EEFDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DD83A3922FBDB6300EEFDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DD83A3C22FBDB6300EEFDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,10 @@
 		8DD83A5022FBDB6300EEFDB3 /* CodeTest_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeTest_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD83A5422FBDB6300EEFDB3 /* CodeTest_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeTest_iOSUITests.m; sourceTree = "<group>"; };
 		8DD83A5622FBDB6300EEFDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD83A6522FBE2A900EEFDB3 /* EQListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EQListViewController.h; sourceTree = "<group>"; };
+		8DD83A6622FBE2A900EEFDB3 /* EQListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EQListViewController.m; sourceTree = "<group>"; };
+		8DD83A6822FBE3A500EEFDB3 /* EQMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EQMapViewController.h; sourceTree = "<group>"; };
+		8DD83A6922FBE3A500EEFDB3 /* EQMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EQMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +104,10 @@
 		8DD83A2F22FBDB6100EEFDB3 /* CodeTest_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8DD83A3022FBDB6100EEFDB3 /* AppDelegate.h */,
-				8DD83A3122FBDB6100EEFDB3 /* AppDelegate.m */,
-				8DD83A3322FBDB6100EEFDB3 /* ViewController.h */,
-				8DD83A3422FBDB6100EEFDB3 /* ViewController.m */,
-				8DD83A3622FBDB6100EEFDB3 /* Main.storyboard */,
+				8DD83A6222FBE10300EEFDB3 /* AppDelegate */,
+				8DD83A6322FBE12000EEFDB3 /* ViewControllers */,
+				8DD83A6422FBE16700EEFDB3 /* Storyboards */,
 				8DD83A3922FBDB6300EEFDB3 /* Assets.xcassets */,
-				8DD83A3B22FBDB6300EEFDB3 /* LaunchScreen.storyboard */,
 				8DD83A3E22FBDB6300EEFDB3 /* Info.plist */,
 				8DD83A3F22FBDB6300EEFDB3 /* main.m */,
 			);
@@ -130,6 +130,35 @@
 				8DD83A5622FBDB6300EEFDB3 /* Info.plist */,
 			);
 			path = CodeTest_iOSUITests;
+			sourceTree = "<group>";
+		};
+		8DD83A6222FBE10300EEFDB3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8DD83A3022FBDB6100EEFDB3 /* AppDelegate.h */,
+				8DD83A3122FBDB6100EEFDB3 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8DD83A6322FBE12000EEFDB3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DD83A6522FBE2A900EEFDB3 /* EQListViewController.h */,
+				8DD83A6622FBE2A900EEFDB3 /* EQListViewController.m */,
+				8DD83A6822FBE3A500EEFDB3 /* EQMapViewController.h */,
+				8DD83A6922FBE3A500EEFDB3 /* EQMapViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8DD83A6422FBE16700EEFDB3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8DD83A3622FBDB6100EEFDB3 /* Main.storyboard */,
+				8DD83A3B22FBDB6300EEFDB3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD83A3522FBDB6100EEFDB3 /* ViewController.m in Sources */,
 				8DD83A4022FBDB6300EEFDB3 /* main.m in Sources */,
+				8DD83A6722FBE2A900EEFDB3 /* EQListViewController.m in Sources */,
 				8DD83A3222FBDB6100EEFDB3 /* AppDelegate.m in Sources */,
+				8DD83A6A22FBE3A500EEFDB3 /* EQMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
