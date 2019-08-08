@@ -7,7 +7,11 @@
 //
 
 #import "EQListViewController.h"
+#import "AFHTTPSessionManager.h"
 #import "EQTableViewCell.h"
+#import "GeoJSON.h"
+
+#define EQ_URL @"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
 
 @interface EQListViewController ()
 
@@ -17,14 +21,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchData];
+}
+
+- (void) fetchData {
+    [self fetchDataFromServer:^(GeoJSON *geoJSON) {
+        self.eqFeaturesList = [[NSArray alloc]initWithArray:geoJSON.features];
+        [self.tableView reloadData];
+    } onFailure:^(NSError *error) {
+        // TODO: show alert
+    }];
+}
+
+- (void)fetchDataFromServer: (void (^)(GeoJSON *geoJSON))success onFailure: (void (^)(NSError* error))failure {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:EQ_URL parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        GeoJSON *geoJSON = [[GeoJSON alloc] initWithDictionary:responseObject];
+        success(geoJSON);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    // Sample placeholder info
-    return 5;
+    return self.eqFeaturesList.count;
 }
 
 

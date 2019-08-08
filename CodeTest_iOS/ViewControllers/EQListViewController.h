@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EQListViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray* eqFeaturesList;
+
+- (void)fetchData;
+
 @end
 
 NS_ASSUME_NONNULL_END
