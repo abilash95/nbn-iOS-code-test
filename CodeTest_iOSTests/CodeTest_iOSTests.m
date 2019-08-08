@@ -38,5 +38,19 @@
     [self waitForExpectationsWithTimeout:20.0 handler:nil];
 }
 
+- (void)testErrorAlert{
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Fetch data from server fails"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        XCTAssertNil(self.eqListVCToTest.eqFeaturesList, "No data was downloaded.");
+        [self.eqListVCToTest showErrorAlert];
+        [expectation fulfill];
+    });
+    [self waitForExpectationsWithTimeout:20.0 handler:nil];
+}
+
+- (void)testGetTime{
+    NSString *time = [self.eqListVCToTest getDateTime:1557208491360];
+    XCTAssert(time != nil && ![time isEqualToString:@""], @"Data source has populated time");
+}
 
 @end

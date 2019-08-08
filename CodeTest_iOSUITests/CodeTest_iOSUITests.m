@@ -40,11 +40,16 @@
     XCTAssertNotNil([self.app.tables element]);
 }
 
-- (void)testEQTableSelection {
+- (void)testEQTableHasEQCell {
     XCUIElementQuery *tablesQuery = self.app.tables;
     XCUIElementQuery *cellQuery = [tablesQuery.cells containingType:XCUIElementTypeStaticText
                                                          identifier:@"earthquake"];
     XCTAssertNotNil(cellQuery);
 }
 
+- (void)testErrorAlertisShownWhenAPIFails {
+    XCTAssertNotNil([[[self.app.otherElements containingType:XCUIElementTypeAlert identifier:@"Error"] childrenMatchingType:XCUIElementTypeOther] elementBoundByIndex:0] );
+}
+
 @end
+

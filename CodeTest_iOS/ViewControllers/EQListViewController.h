@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSArray* eqFeaturesList;
 
 - (void)fetchData;
+- (void)showErrorAlert;
+- (NSString *)getDateTime: (double)timeStamp;
 
 @end
 

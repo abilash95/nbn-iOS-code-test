@@ -13,7 +13,17 @@
 
 #define EQ_URL @"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
 
+#define EQMagnitude @"Magnitude"
+#define EQDateFormat @"dd/MM/yyy hh:mm a"
+#define EQPROPERTIES @"properties"
+#define EQPLACE @"place"
+#define EQTYPE @"type"
+#define EQTIME @"time"
+#define EQMAGNITUDE @"mag"
+
 @interface EQListViewController ()
+
+@property NSDateFormatter *dateformatter;
 
 @end
 
@@ -25,17 +35,23 @@
 }
 
 - (void) fetchData {
-    [self fetchDataFromServer:^(GeoJSON *geoJSON) {
-        self.eqFeaturesList = [[NSArray alloc]initWithArray:geoJSON.features];
-        [self.tableView reloadData];
-    } onFailure:^(NSError *error) {
-        // TODO: show alert
-    }];
+    [self fetchDataFromServerForURL:EQ_URL
+                          onSuccess:^(GeoJSON *geoJSON) {
+                              self.eqFeaturesList = [[NSArray alloc]initWithArray:geoJSON.features];
+                              [self.tableView reloadData];
+                          } onFailure:^(NSError *error) {
+                              [self showErrorAlert];
+                          }];
 }
 
-- (void)fetchDataFromServer: (void (^)(GeoJSON *geoJSON))success onFailure: (void (^)(NSError* error))failure {
+/**
+ Fetch earthquake details from the server.
+ @param success A block object to be executed when the task finishes successfully. This block returns a GeoJSON object on success.
+ @param failure A block object to be executed when the task finishes unsuccessfully. This block returns an error of NSError type.
+ **/
+- (void)fetchDataFromServerForURL: (NSString *) url onSuccess: (void (^)(GeoJSON *geoJSON))success onFailure: (void (^)(NSError* error))failure {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:EQ_URL parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:url parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         GeoJSON *geoJSON = [[GeoJSON alloc] initWithDictionary:responseObject];
         success(geoJSON);
@@ -46,21 +62,39 @@
     
 }
 
+/**
+ Shows an error alert when the API fails.
+ **/
+- (void) showErrorAlert {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                   message:@"Couldn't load the data !!"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self fetchData];
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.eqFeaturesList.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EQTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EQTableViewCell" forIndexPath:indexPath];
     
-    // Sample placeholder info
-    cell.placeLabel.text = @"4km NNE of Redoubt Volcano, Alaska";
-    cell.typeLabel.text = @"earthquake";
-    cell.timeLabel.text = @"dd/MM/yyy hh:mm a";
-    cell.magnitudeLabel.text = @".05";
+    double time = [[[[self.eqFeaturesList objectAtIndex:indexPath.row] valueForKey:EQPROPERTIES] valueForKey:EQTIME] doubleValue];
+    double magnitude = [[[[self.eqFeaturesList objectAtIndex:indexPath.row] valueForKey:EQPROPERTIES] valueForKey:EQMAGNITUDE] doubleValue];
+    
+    cell.placeLabel.text = [[[self.eqFeaturesList objectAtIndex:indexPath.row] valueForKey:EQPROPERTIES] valueForKey:EQPLACE];
+    cell.typeLabel.text = [[[self.eqFeaturesList objectAtIndex:indexPath.row] valueForKey:EQPROPERTIES] valueForKey:EQTYPE];
+    cell.timeLabel.text =  [self getDateTime:time];
+    cell.magnitudeLabel.text = [NSString stringWithFormat:@"%.02f", magnitude];
     
     return cell;
 }
@@ -75,5 +109,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+/**
+ Converts the timestamp from API response to respective human readable date time string
+ @param timeStamp A long integer received in the API response.
+ @return Date time of NSString type
+ **/
+- (NSString *)getDateTime: (double)timeStamp {
+    NSTimeInterval timeInterval=timeStamp/1000.0;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    if (self.dateformatter == nil) {
+        self.dateformatter = [[NSDateFormatter alloc]init];
+        [self.dateformatter setDateFormat:@"dd/MM/yyy hh:mm a"];
+    }
+    NSString *dateString=[self.dateformatter stringFromDate:date];
+    return dateString;
+}
 
 @end

@@ -51,14 +51,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-EZ-yRC">
-                                                    <rect key="frame" x="335" y="82" width="25" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-EZ-yRC">
+                                                    <rect key="frame" x="328" y="82" width="32" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.97223121759999998" green="0.4881420165" blue="0.1679784979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magnitude : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adj-WT-0rQ">
-                                                    <rect key="frame" x="238" y="82" width="95" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Magnitude : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adj-WT-0rQ">
+                                                    <rect key="frame" x="230" y="82" width="95" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.97223121759999998" green="0.4881420165" blue="0.1679784979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                                 <constraint firstItem="l1r-Oh-L4f" firstAttribute="top" secondItem="ytx-yz-7Yp" secondAttribute="bottom" constant="16" id="02X-Ha-AaH"/>
                                                 <constraint firstItem="fqf-EZ-yRC" firstAttribute="firstBaseline" secondItem="adj-WT-0rQ" secondAttribute="firstBaseline" id="4sz-iF-5ms"/>
                                                 <constraint firstItem="ytx-yz-7Yp" firstAttribute="top" secondItem="RoP-jU-L3z" secondAttribute="top" constant="20" id="8br-Cn-Vye"/>
-                                                <constraint firstItem="fqf-EZ-yRC" firstAttribute="leading" secondItem="adj-WT-0rQ" secondAttribute="trailing" constant="2" id="AqE-KD-DHj"/>
+                                                <constraint firstItem="fqf-EZ-yRC" firstAttribute="leading" secondItem="adj-WT-0rQ" secondAttribute="trailing" constant="3" id="AqE-KD-DHj"/>
                                                 <constraint firstItem="0dL-PP-KHW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ytx-yz-7Yp" secondAttribute="trailing" constant="8" symbolic="YES" id="CYn-np-7yr"/>
                                                 <constraint firstItem="fqf-EZ-yRC" firstAttribute="baseline" secondItem="l1r-Oh-L4f" secondAttribute="baseline" id="Ea5-OL-pxW"/>
                                                 <constraint firstItem="ytx-yz-7Yp" firstAttribute="firstBaseline" secondItem="0dL-PP-KHW" secondAttribute="firstBaseline" id="FHn-LX-H20"/>
@@ -77,7 +77,7 @@
                                                 <constraint firstItem="ytx-yz-7Yp" firstAttribute="leading" secondItem="l1r-Oh-L4f" secondAttribute="leading" id="WjE-TE-9Rm"/>
                                                 <constraint firstItem="fqf-EZ-yRC" firstAttribute="top" secondItem="0dL-PP-KHW" secondAttribute="bottom" constant="40" id="Zf0-zL-ZfC"/>
                                                 <constraint firstItem="ytx-yz-7Yp" firstAttribute="leading" secondItem="RoP-jU-L3z" secondAttribute="leading" constant="18" id="oB1-C6-tAh"/>
-                                                <constraint firstItem="adj-WT-0rQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l1r-Oh-L4f" secondAttribute="trailing" constant="8" symbolic="YES" id="q2n-8n-W7o"/>
+                                                <constraint firstItem="adj-WT-0rQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="l1r-Oh-L4f" secondAttribute="trailing" constant="-1" id="q2n-8n-W7o"/>
                                                 <constraint firstItem="fqf-EZ-yRC" firstAttribute="baseline" secondItem="adj-WT-0rQ" secondAttribute="baseline" id="qTA-TL-Yv2"/>
                                                 <constraint firstItem="ytx-yz-7Yp" firstAttribute="trailing" secondItem="l1r-Oh-L4f" secondAttribute="trailing" id="x6L-1E-b8c"/>
                                                 <constraint firstAttribute="trailing" secondItem="0dL-PP-KHW" secondAttribute="trailing" constant="8" id="y5H-Rq-3yL"/>
