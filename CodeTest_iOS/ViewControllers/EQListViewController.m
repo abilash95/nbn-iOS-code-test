@@ -56,11 +56,12 @@
         
         GeoJSON *geoJSON = [[GeoJSON alloc] initWithDictionary:responseObject];
         success(geoJSON);
+        [manager invalidateSessionCancelingTasks:YES];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);
+        [manager invalidateSessionCancelingTasks:YES];
     }];
-    
 }
 
 /**
